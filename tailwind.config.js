@@ -11,7 +11,6 @@ module.exports = {
         primary: '#6C80EA',
         secondary: '#A7A5EC',
         background: {
-
           paper: 'rgba(255, 255, 255, 0.25)',
         },
         gray: {
@@ -22,6 +21,9 @@ module.exports = {
         black: {
           light: '#00030f',
           DEFAULT: '#000'
+        },
+        purple: {
+          light: '#DCDAF6'
         }
 
       }
