@@ -1,8 +1,9 @@
+import { Navbar } from "../components/Navbar";
 
 export default function Home() {
   return (
-    <div className='container'>
-      <h1>Hello World</h1>
+    <div className='bg-gradient-to-b from-black to-black-light'>
+      <Navbar />
     </div>
   )
 }
