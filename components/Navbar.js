@@ -3,9 +3,10 @@ import { SearchBar } from "./SearchBar"
 
 export const Navbar = () => {
   return (
-    <div className='flex ml-10 items-center py-4'>
-      <img className='mr-36' src="logo.svg" alt="devbook" />
+    <div className='grid grid-cols-3 items-center py-4 mx-16'>
+      <img className='' src="logo.svg" alt="devbook" />
       <SearchBar rounded={true} />
+      {/* <div className='invisible' /> */}
     </div>
   )
 }
