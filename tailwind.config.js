@@ -11,7 +11,11 @@ module.exports = {
         primary: '#6C80EA',
         secondary: '#A7A5EC',
         background: {
-          paper: 'rgba(255, 255, 255, 0.25)',
+          paper: {
+            DEFAULT: 'rgba(255, 255, 255, 0.25)',
+            dark: 'rgba(255, 255, 255, 0.15)',
+
+          }
         },
         gray: {
           light: '#c4c4c4',
