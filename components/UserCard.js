@@ -1,14 +1,34 @@
+import axios from 'axios'
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
 
-export const UserCard = () => {
+export const UserCard = ({ user_url }) => {
+  const [userInfo, setUserInfo] = useState()
+
+  useEffect(async () => {
+    try {
+      const response = await axios.get(user_url)
+      if (response.status === 200) {
+        setUserInfo(response.data)
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }, [user_url])
+
+
   return (
     <div className="w-56 2xl:ml-8 h-80 p-2 rounded-md bg-background-paper ">
-      <Image className=' bg-gray-light rounded-md ' src='https://avatars.githubusercontent.com/u/1024025?v=4' width='300' height='300' />
-      <div className="flex justify-between my-2">
-        <h3 className='text-sm font-medium text-gray-200'>Linus Torvalds</h3>
-        <h3 className='text-sm font-medium text-gray-200'>@torvalds</h3>
+      <div className="bg-gray-light rounded-md h-52 w-52">
+        {userInfo?.avatar_url &&
+          <Image src={userInfo.avatar_url} width='300' height='300' />
+        }
       </div>
-      <p className='text-xs my-2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, quis. dfweff fwenf wkenf wkfw</p>
+      <div className="flex justify-between my-2">
+        <h3 className='text-sm font-medium text-gray-200'>{userInfo?.name}</h3>
+        <h3 className='text-sm font-medium text-gray-200'>@{userInfo?.login}</h3>
+      </div>
+      <p className='text-xs my-2 line-clamp-4'>{userInfo?.bio ? userInfo.bio : 'No bio'}</p>
     </div>
   )
 }

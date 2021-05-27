@@ -2,7 +2,17 @@ import Slider from "react-slick"
 import { UserCard } from "./UserCard"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
+const fetchTopUsers = async () => {
+  try {
+    const response = await axios.get('https://api.github.com/search/users?q=followers:%3E25000&per_page=10')
+    return response
+  } catch (error) {
+    console.log(error)
+  }
+}
 
 export const UserCardList = () => {
   const settings = {
@@ -10,22 +20,36 @@ export const UserCardList = () => {
     infinite: true,
     slidesToShow: 5,
     swipeToSlide: true,
-    // arrows: false,
   };
+
+  const [topUsers, setTopUsers] = useState([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(async () => {
+    const response = await fetchTopUsers()
+    if (response.status === 200) {
+      const users = []
+      response.data.items.map(item => {
+        users.push({ url: item.url, id: item.id })
+      })
+      setTopUsers(users)
+      setLoading(false)
+    }
+  }, [])
 
   return (
     <div className='bg-background-paper-dark flex flex-col justify-between text-white rounded-md mb-8 mx-16 p-8'>
       <h1 className='text-4xl font-semibold mb-8'>Top users</h1>
 
       <Slider {...settings}>
-        <UserCard />
-        <UserCard />
-        <UserCard />
-        <UserCard />
-        <UserCard />
-        <UserCard />
-        <UserCard />
-        <UserCard />
+        {topUsers?.map((user => {
+          return (loading ?
+            <UserCard key={user.id} />
+            :
+            <UserCard key={user.id} user_url={user.url} />
+          )
+        }))}
+
       </Slider>
 
     </div >
