@@ -19,7 +19,6 @@ export const SearchBar = ({ rounded }) => {
         onClick={() => searchTerm && router.push(`/search?query=${searchTerm || ''}`)}
       >
         <div className='px-2 py-2 w-11 flex justify-center'>
-
           <Image src='/search-icon.svg' alt='search' width='25' height='25' />
         </div>
       </button>
