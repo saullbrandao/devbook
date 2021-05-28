@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 
@@ -17,7 +18,10 @@ export const SearchBar = ({ rounded }) => {
         className={`bg-primary flex-grow-0 ${rounded ? 'rounded-full' : 'rounded-r-md'}  focus:outline-none`}
         onClick={() => searchTerm && router.push(`/search?query=${searchTerm || ''}`)}
       >
-        <img className=' px-3 w-11 ' src='search.svg' alt='search' />
+        <div className='px-2 py-2 w-11 flex justify-center'>
+
+          <Image src='/search-icon.svg' alt='search' width='25' height='25' />
+        </div>
       </button>
 
     </div>
