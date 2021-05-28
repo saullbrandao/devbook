@@ -39,7 +39,7 @@ export default function Search({ term }) {
 
   searchUsers('Linus')
   return (
-    <div className='flex flex-col mx-16 my-16 gap-8' >
+    <div className='container mx-auto flex flex-col my-16 gap-8' >
       <h1 className='text-white font-bold text-4xl'>Results for {searchTerm}</h1>
       <div className="grid grid-cols-4 justify-items-center gap-4 p-8 rounded-md bg-background-paper">
         {users?.map((user => {
