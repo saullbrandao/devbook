@@ -3,11 +3,11 @@ import { UserCard } from "./UserCard"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import { searchApi } from "../services/api";
 
 const fetchTopUsers = async () => {
   try {
-    const response = await axios.get('https://api.github.com/search/users?q=followers:%3E25000&per_page=10')
+    const response = await searchApi.get('users?q=followers:%3E25000&per_page=10')
     return response
   } catch (error) {
     console.log(error)
