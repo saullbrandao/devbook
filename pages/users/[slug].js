@@ -8,6 +8,30 @@ const sortTopRepos = (repos) => {
   return repos.sort((a, b) => b.stargazers_count - a.stargazers_count).slice(0, 2)
 }
 
+const fetchUserData = async (slug) => {
+  try {
+    const response = await usersApi.get(`/${slug}`)
+    return response.data
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+const fetchRepos = async (slug) => {
+  try {
+    const response = await usersApi.get(`/${slug}/repos`, {
+      params: {
+        sort: 'updated',
+        direction: 'desc',
+        per_page: 100
+      }
+    })
+    return response.data
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export default function User() {
   const router = useRouter()
   const { slug } = router.query
@@ -16,16 +40,12 @@ export default function User() {
   const [topRepos, setTopRepos] = useState([])
 
   useEffect(async () => {
-    try {
-      if (slug) {
-        const userResponse = await usersApi.get(`/${slug}`)
-        const reposResponse = await usersApi.get(`/${slug}/repos`)
-        const sortedRepos = sortTopRepos(reposResponse.data)
-        setName(userResponse.data.name)
-        setTopRepos(sortedRepos)
-      }
-    } catch (error) {
-      console.log(error)
+    if (slug) {
+      const user = await fetchUserData(slug)
+      const repos = await fetchRepos(slug)
+      const sortedRepos = sortTopRepos(repos)
+      setName(user.name)
+      setTopRepos(sortedRepos)
     }
   }, [slug])
 
