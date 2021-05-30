@@ -1,6 +1,5 @@
 import Slider from "react-slick"
 import { UserCard } from "./UserCard"
-import { useEffect, useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -11,7 +10,7 @@ export const UserCardList = ({ topUsers }) => {
     infinite: true,
     slidesToShow: 5,
     swipeToSlide: true,
-    autoplay: true
+    autoplay: true,
   };
 
   return (
