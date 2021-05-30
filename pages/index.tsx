@@ -1,8 +1,18 @@
+import { GetStaticProps } from "next";
 import { SearchSection } from "../components/SearchSection";
 import { UserCardList } from "../components/UserCardList";
 import { searchApi } from '../services/api'
 
-export default function Home({ topUsers }) {
+type TopUser = {
+  id: string;
+  url: string;
+}
+
+type HomeProps = {
+  topUsers: TopUser[]
+}
+
+export default function Home({ topUsers }: HomeProps) {
   return (
     <div className='flex flex-col h-full gap-8 container mx-auto'>
       <SearchSection />
@@ -11,7 +21,7 @@ export default function Home({ topUsers }) {
   )
 }
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const { data } = await searchApi.get('users?q=followers:%3E25000&per_page=10')
 
   const topUsers = data.items.map(user => {
@@ -25,6 +35,6 @@ export const getStaticProps = async () => {
     props: {
       topUsers
     },
-    revalidate: 60 * 60 * 24
+    revalidate: 60 * 60 * 2
   }
 }

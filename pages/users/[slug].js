@@ -44,7 +44,7 @@ export default function User() {
       const user = await fetchUserData(slug)
       const repos = await fetchRepos(slug)
       const sortedRepos = sortTopRepos(repos)
-      setName(user.name)
+      setName(user?.name)
       setTopRepos(sortedRepos)
     }
   }, [slug])
@@ -71,9 +71,10 @@ export default function User() {
       <div>
         <h2 className='text-2xl mb-3'>▼ Repos</h2>
         <div className='bg-background-paper flex justify-around py-4'>
-          {topRepos.map((repo, i) => {
+          {topRepos?.map((repo, i) => {
             return (
               < Image
+                key={i}
                 src={`https://github-readme-stats.vercel.app/api/pin/?username=${slug}&repo=${repo.name}&bg_color=151515&title_color=ffffff&text_color=9E9E9E`}
                 width='500'
                 height='149'

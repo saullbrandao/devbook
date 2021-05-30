@@ -11,6 +11,7 @@ export const UserCardList = ({ topUsers }) => {
     infinite: true,
     slidesToShow: 5,
     swipeToSlide: true,
+    autoplay: true
   };
 
   return (
