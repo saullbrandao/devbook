@@ -2,8 +2,12 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 
+type SearchBarProps = {
+  rounded?: boolean
+}
 
-export const SearchBar = ({ rounded }) => {
+
+export const SearchBar = ({ rounded }: SearchBarProps) => {
   const router = useRouter()
   const [searchTerm, setSearchTerm] = useState('')
 
