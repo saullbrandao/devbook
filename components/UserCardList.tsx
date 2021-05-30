@@ -3,8 +3,16 @@ import { UserCard } from "./UserCard"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+type TopUser = {
+  id: string;
+  url: string;
+}
 
-export const UserCardList = ({ topUsers }) => {
+type UserCardListProps = {
+  topUsers: TopUser[]
+}
+
+export const UserCardList = ({ topUsers }: UserCardListProps) => {
   const settings = {
     className: "center",
     infinite: true,

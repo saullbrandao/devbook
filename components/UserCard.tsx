@@ -1,18 +1,37 @@
 import axios from 'axios'
 import Image from 'next/image'
 import Link from 'next/link'
-
 import { useEffect, useState } from 'react'
 
-export const UserCard = ({ user_url }) => {
-  const [userInfo, setUserInfo] = useState()
+type UserInfo = {
+  avatar: string;
+  login: string;
+  name: string;
+  bio: string;
+}
 
-  useEffect(async () => {
-    try {
+type UserCardProps = {
+  user_url: string
+}
+export const UserCard = ({ user_url }: UserCardProps) => {
+  const [userInfo, setUserInfo] = useState<UserInfo | undefined>()
+
+  useEffect(() => {
+    const fetchUserData = async () => {
       const response = await axios.get(user_url)
       if (response.status === 200) {
-        setUserInfo(response.data)
+        const userData = {
+          avatar: response.data.avatar_url,
+          login: response.data.login,
+          name: response.data.name,
+          bio: response.data.bio,
+        }
+
+        setUserInfo(userData)
       }
+    }
+    try {
+      fetchUserData()
     } catch (error) {
       console.log(error)
     }
@@ -23,8 +42,8 @@ export const UserCard = ({ user_url }) => {
     <Link href={`/users/${userInfo?.login}`}>
       <div className="w-56 2xl:ml-8 h-80 p-2 rounded-md bg-background-paper cursor-pointer ">
         <div className="bg-gray-light rounded-md h-52 w-52">
-          {userInfo?.avatar_url &&
-            <Image src={userInfo.avatar_url} width='300' height='300' />
+          {userInfo?.avatar &&
+            <Image src={userInfo.avatar} width='300' height='300' />
           }
         </div>
         <div className="flex justify-between my-2">
