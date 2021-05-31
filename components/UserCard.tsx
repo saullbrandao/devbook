@@ -41,16 +41,16 @@ export const UserCard = ({ user_url }: UserCardProps) => {
   return (
     <Link href={`/users/${userInfo?.login}`}>
       <div className="w-56 2xl:ml-8 h-80 p-2 rounded-md bg-background-paper cursor-pointer ">
-        <div className="bg-gray-light rounded-md h-52 w-52">
+        <div className="bg-secondary dark:bg-gray-light rounded-md h-52 w-52">
           {userInfo?.avatar &&
             <Image src={userInfo.avatar} width='300' height='300' />
           }
         </div>
         <div className="flex justify-between my-2">
-          <h3 className='text-sm font-medium text-gray-200'>{userInfo?.name}</h3>
-          <h3 className='text-sm font-medium text-gray-200'>@{userInfo?.login}</h3>
+          <h3 className='text-sm font-medium '>{userInfo?.name}</h3>
+          <h3 className='text-sm font-medium '>@{userInfo?.login}</h3>
         </div>
-        <p className='text-xs my-2 line-clamp-4'>{userInfo?.bio ? userInfo.bio : 'No bio'}</p>
+        <p className='text-xs my-2 line-clamp-4'>{userInfo?.bio}</p>
       </div>
     </Link>
   )

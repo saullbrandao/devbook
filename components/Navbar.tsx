@@ -1,6 +1,7 @@
 import { SearchBar } from "./SearchBar"
 import Link from 'next/link'
 import Image from "next/image"
+import { ThemeToggle } from "./ThemeToggle"
 
 export const Navbar = () => {
   return (
@@ -11,7 +12,7 @@ export const Navbar = () => {
         </a>
       </Link>
       <SearchBar rounded={true} />
-      <div />
+      <ThemeToggle />
     </div>
   )
 }

@@ -50,11 +50,11 @@ export default function User() {
   }, [slug])
 
   return (
-    <section className='text-white flex flex-col container mx-auto gap-4 my-8'>
+    <section className='dark:text-white flex flex-col container mx-auto gap-4 my-8'>
       <h1 className="font-bold text-4xl">{name}</h1>
       <div>
         <h2 className='text-2xl mb-3'>▼ Github Stats</h2>
-        <div className='bg-background-paper flex justify-evenly py-4'>
+        <div className='bg-secondary dark:bg-background-paper flex justify-evenly py-4'>
           <Image
             src={`https://github-readme-stats.vercel.app/api?username=${slug}&show_icons=true&bg_color=151515&title_color=ffffff&text_color=9E9E9E&icon_color=67D47F`}
             width='618'
@@ -70,7 +70,7 @@ export default function User() {
 
       <div>
         <h2 className='text-2xl mb-3'>▼ Repos</h2>
-        <div className='bg-background-paper flex justify-around py-4'>
+        <div className='bg-secondary dark:bg-background-paper flex justify-around py-4'>
           {topRepos?.map((repo, i) => {
             return (
               < Image
