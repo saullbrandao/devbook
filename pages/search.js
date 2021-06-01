@@ -37,7 +37,6 @@ export default function Search({ term }) {
 
   }, [searchTerm])
 
-  searchUsers('Linus')
   return (
     <div className='container mx-auto flex flex-col my-16 gap-8' >
       <h1 className='dark:text-white font-bold text-4xl'>Results for {searchTerm}</h1>

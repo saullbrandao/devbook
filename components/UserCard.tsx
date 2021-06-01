@@ -15,6 +15,7 @@ type UserCardProps = {
 }
 export const UserCard = ({ user_url }: UserCardProps) => {
   const [userInfo, setUserInfo] = useState<UserInfo | undefined>()
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -28,10 +29,11 @@ export const UserCard = ({ user_url }: UserCardProps) => {
         }
 
         setUserInfo(userData)
+        setLoading(false)
       }
     }
     try {
-      fetchUserData()
+      user_url && fetchUserData()
     } catch (error) {
       console.log(error)
     }
