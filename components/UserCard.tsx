@@ -40,9 +40,23 @@ export const UserCard = ({ user_url }: UserCardProps) => {
   }, [user_url])
 
 
-  return (
-    <Link href={`/users/${userInfo?.login}`}>
-      <div className="w-56 2xl:ml-8 h-80 p-2 rounded-md bg-background-paper cursor-pointer ">
+  return (loading
+    ? <div className="w-56 2xl:ml-8 h-80 p-2 rounded-md bg-background-paper">
+      <div className="bg-secondary dark:bg-gray-light rounded-md h-52 w-52" />
+      <div className="flex justify-between gap-2 my-2">
+        <div className='bg-secondary dark:bg-gray-light h-4 w-3/5 rounded-md ' />
+        <div className='bg-secondary dark:bg-gray-light h-4 w-2/5 rounded-md' />
+      </div>
+      <div className="flex flex-col gap-2">
+
+        <div className='bg-secondary dark:bg-gray-light h-2 rounded-md ' />
+        <div className='bg-secondary dark:bg-gray-light h-2 rounded-md ' />
+        <div className='bg-secondary dark:bg-gray-light h-2 rounded-md ' />
+        <div className='bg-secondary dark:bg-gray-light h-2 rounded-md ' />
+      </div>
+    </div>
+    : <Link href={`/users/${userInfo?.login}`}>
+      <div className="w-56 2xl:ml-8 h-80 p-2 rounded-md bg-background-paper cursor-pointer dark:text-white">
         <div className="bg-secondary dark:bg-gray-light rounded-md h-52 w-52">
           {userInfo?.avatar &&
             <Image src={userInfo.avatar} width='300' height='300' />
