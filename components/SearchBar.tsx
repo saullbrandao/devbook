@@ -18,7 +18,7 @@ export const SearchBar = ({ rounded }: SearchBarProps) => {
   }
 
   return (
-    <div className={`bg-purple-light ${rounded ? 'rounded-full border-primary border-4' : 'rounded-md '} flex justify-between h-14`}>
+    <div className={`bg-purple-light ${rounded ? 'rounded-full border-primary border-4 w-1/3' : 'rounded-md '} flex justify-between h-14`}>
       <input
         className="rounded-full flex-1 bg-purple-light placeholder-gray-dark pl-4 text-md text-gray-dark focus:outline-none"
         type='text'

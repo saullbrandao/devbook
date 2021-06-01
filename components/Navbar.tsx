@@ -5,7 +5,7 @@ import { ThemeToggle } from "./ThemeToggle"
 
 export const Navbar = () => {
   return (
-    <div className='container mx-auto grid grid-cols-3 items-center py-4 mb-8'>
+    <div className='container mx-auto flex justify-between items-center py-4 mb-8'>
       <Link href='/'>
         <a>
           <Image className='' src="/logo.svg" alt="devbook" width='270' height='75' />
