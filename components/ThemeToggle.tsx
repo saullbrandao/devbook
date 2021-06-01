@@ -2,10 +2,14 @@ import { useState, useEffect } from 'react'
 import { Switch } from '@headlessui/react'
 
 export function ThemeToggle() {
-  const [darkMode, setDarkMode] = useState(true)
+  const [darkMode, setDarkMode] = useState(false)
 
   useEffect(() => {
-    if (localStorage.darkMode === 'false') setDarkMode(false)
+    if (localStorage.darkMode === 'true' || (!('darkMode' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      setDarkMode(true)
+    } else {
+      setDarkMode(false)
+    }
   }, [])
 
   useEffect(() => {
