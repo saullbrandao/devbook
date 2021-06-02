@@ -11,7 +11,7 @@ type UserInfo = {
 }
 
 type UserCardProps = {
-  user_url: string
+  user_url?: string
 }
 export const UserCard = ({ user_url }: UserCardProps) => {
   const [userInfo, setUserInfo] = useState<UserInfo | undefined>()
@@ -48,7 +48,6 @@ export const UserCard = ({ user_url }: UserCardProps) => {
         <div className='bg-secondary dark:bg-gray-light h-4 w-2/5 rounded-md' />
       </div>
       <div className="flex flex-col gap-2">
-
         <div className='bg-secondary dark:bg-gray-light h-2 rounded-md ' />
         <div className='bg-secondary dark:bg-gray-light h-2 rounded-md ' />
         <div className='bg-secondary dark:bg-gray-light h-2 rounded-md ' />
