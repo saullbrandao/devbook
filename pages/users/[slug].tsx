@@ -4,32 +4,8 @@ import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 import { usersApi } from "../../services/api"
 
-const sortTopRepos = (repos) => {
+const sortTopRepos = (repos: any[]) => {
   return repos.sort((a, b) => b.stargazers_count - a.stargazers_count).slice(0, 2)
-}
-
-const fetchUserData = async (slug) => {
-  try {
-    const response = await usersApi.get(`/${slug}`)
-    return response.data
-  } catch (error) {
-    console.log(error)
-  }
-}
-
-const fetchRepos = async (slug) => {
-  try {
-    const response = await usersApi.get(`/${slug}/repos`, {
-      params: {
-        sort: 'updated',
-        direction: 'desc',
-        per_page: 100
-      }
-    })
-    return response.data
-  } catch (error) {
-    console.log(error)
-  }
 }
 
 export default function User() {
@@ -39,13 +15,35 @@ export default function User() {
   const [name, setName] = useState('')
   const [topRepos, setTopRepos] = useState([])
 
-  useEffect(async () => {
+  useEffect(() => {
+    const fetchUserData = async (slug) => {
+      try {
+        const response = await usersApi.get(`/${slug}`)
+        setName(response.data.name)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+    const fetchRepos = async (slug) => {
+      try {
+        const response = await usersApi.get(`/${slug}/repos`, {
+          params: {
+            sort: 'updated',
+            direction: 'desc',
+            per_page: 100
+          }
+        })
+        const sortedRepos = sortTopRepos(response.data)
+        setTopRepos(sortedRepos)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
     if (slug) {
-      const user = await fetchUserData(slug)
-      const repos = await fetchRepos(slug)
-      const sortedRepos = sortTopRepos(repos)
-      setName(user?.name)
-      setTopRepos(sortedRepos)
+      fetchUserData(slug)
+      fetchRepos(slug)
     }
   }, [slug])
 
@@ -67,7 +65,6 @@ export default function User() {
           />
         </div>
       </div>
-
       <div>
         <h2 className='text-2xl mb-3'>▼ Repos</h2>
         <div className='bg-secondary dark:bg-background-paper h-48 flex justify-around py-4'>
