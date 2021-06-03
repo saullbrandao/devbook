@@ -66,15 +66,17 @@ export default function User() {
       </div>
       <div>
         <h2 className='text-2xl mb-3'>▼ Repos</h2>
-        <div className='md:bg-secondary md:dark:bg-background-paper flex flex-col md:flex-row md:justify-around md:gap-4 md:p-4'>
+        <div className='md:bg-secondary md:dark:bg-background-paper flex flex-col md:flex-row md:justify-around gap-1 md:p-4'>
           {topRepos?.map((repo, i) => {
             return (
-              < Image
-                key={i}
-                src={`https://github-readme-stats.vercel.app/api/pin/?username=${slug}&repo=${repo.name}&bg_color=151515&title_color=ffffff&text_color=9E9E9E`}
-                width='435'
-                height='130'
-              />
+              <div className='self-center'>
+                < Image
+                  key={i}
+                  src={`https://github-readme-stats.vercel.app/api/pin/?username=${slug}&repo=${repo.name}&bg_color=151515&title_color=ffffff&text_color=9E9E9E`}
+                  width='435'
+                  height='130'
+                />
+              </div>
             )
           })}
         </div>
