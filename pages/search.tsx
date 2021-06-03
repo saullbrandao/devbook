@@ -30,9 +30,9 @@ export default function Search() {
   }, [term])
 
   return (
-    <div className='container mx-auto flex flex-col my-16 gap-8' >
+    <div className='container mx-auto flex flex-col items-center lg:items-stretch my-8 md:my-16 gap-8' >
       <h1 className='dark:text-white font-bold text-4xl'>Results for {term}</h1>
-      <div className="grid grid-cols-4 justify-items-center gap-4 p-8 rounded-md bg-secondary dark:bg-background-paper">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center gap-4 p-8 self-stretch rounded-md bg-secondary dark:bg-background-paper">
         {users?.map((user => {
           return (loading ?
             <UserCard key={user.id} />
