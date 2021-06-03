@@ -1,7 +1,5 @@
-import Slider from "react-slick"
 import { UserCard } from "./UserCard"
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import Carousel from "react-elastic-carousel";
 
 type TopUser = {
   id: string;
@@ -13,47 +11,38 @@ type UserCardListProps = {
 }
 
 export const UserCardList = ({ topUsers }: UserCardListProps) => {
-  const settings = {
-    className: "center",
-    infinite: true,
-    slidesToShow: 5,
-    swipeToSlide: true,
-    autoplay: true,
-    arrows: false,
-    responsive: [
-      {
-        breakpoint: 1280,
-        settings: {
-          slidesToShow: 4,
-        }
-      },
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-        }
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-        }
-      },
-      {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: 1,
-        }
-      },
-    ]
-  };
-
   return (
-    <div className='bg-secondary dark:bg-background-paper-dark flex flex-col justify-between dark:text-white rounded-md mb-8 p-8'>
-      <h1 className='text-4xl font-semibold mb-8'>Top users</h1>
-      <Slider {...settings}>
+    <div className='bg-secondary dark:bg-background-paper-dark flex flex-col justify-between dark:text-white rounded-md mb-8 py-4'>
+      <h1 className='text-4xl font-semibold mb-8 self-center'>Top users</h1>
+      <Carousel
+        showArrows={false}
+        isRTL={false}
+        enableAutoPlay={true}
+        autoPlaySpeed={2000}
+        breakPoints={[{
+          width: 1,
+          itemsToShow: 1
+        },
+        {
+          width: 500,
+          itemsToShow: 2
+        },
+        {
+          width: 700,
+          itemsToShow: 3
+        },
+        {
+          width: 1000,
+          itemsToShow: 4
+        },
+        {
+          width: 1300,
+          itemsToShow: 5
+        },
+        ]}
+      >
         {topUsers?.map((user => <UserCard key={user.id} user_url={user.url} />))}
-      </Slider>
+      </Carousel>
     </div >
   )
 }
