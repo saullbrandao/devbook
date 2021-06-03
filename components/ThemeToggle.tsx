@@ -24,7 +24,7 @@ export function ThemeToggle() {
   }, [darkMode])
 
   return (
-    <div className='flex justify-center gap-4'>
+    <div className='flex justify-center gap-4 justify-self-end'>
       <span className=' dark:text-white'>Dark Mode</span>
       <Switch
         checked={darkMode}
