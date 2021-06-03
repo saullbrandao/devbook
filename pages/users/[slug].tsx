@@ -69,9 +69,8 @@ export default function User() {
         <div className='md:bg-secondary md:dark:bg-background-paper flex flex-col md:flex-row md:justify-around gap-1 md:p-4'>
           {topRepos?.map((repo, i) => {
             return (
-              <div className='self-center'>
+              <div key={i} className='self-center'>
                 < Image
-                  key={i}
                   src={`https://github-readme-stats.vercel.app/api/pin/?username=${slug}&repo=${repo.name}&bg_color=151515&title_color=ffffff&text_color=9E9E9E`}
                   width='435'
                   height='130'
