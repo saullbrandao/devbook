@@ -14,7 +14,7 @@ type HomeProps = {
 
 export default function Home({ topUsers }: HomeProps) {
   return (
-    <div className='flex flex-col h-full gap-8 container mx-auto'>
+    <div className='flex flex-col gap-4 justify-center-center container mx-auto'>
       <SearchSection />
       <UserCardList topUsers={topUsers} />
     </div>

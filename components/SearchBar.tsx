@@ -3,11 +3,12 @@ import { useRouter } from 'next/router'
 import { useState } from 'react'
 
 type SearchBarProps = {
-  rounded?: boolean
+  rounded?: boolean;
+  hidden?: boolean;
 }
 
 
-export const SearchBar = ({ rounded }: SearchBarProps) => {
+export const SearchBar = ({ rounded, hidden }: SearchBarProps) => {
   const router = useRouter()
   const [searchTerm, setSearchTerm] = useState('')
 
@@ -18,7 +19,7 @@ export const SearchBar = ({ rounded }: SearchBarProps) => {
   }
 
   return (
-    <div className={`bg-purple-light ${rounded ? 'rounded-md md:rounded-full border-primary md:border-4 lg:w-1/3' : 'rounded-md '} flex h-14 order-last md:order-none col-span-2`}>
+    <div className={`bg-purple-light ${rounded ? 'rounded-md md:rounded-full border-primary md:border-4 lg:w-1/3' : 'rounded-md '} ${hidden && 'hidden md:flex'} flex h-14 order-last md:order-none col-span-2`}>
       <input
         className="rounded-full flex-1 bg-purple-light placeholder-gray-dark pl-4 text-md text-gray-dark focus:outline-none"
         type='text'
