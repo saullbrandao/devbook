@@ -21,7 +21,7 @@ export const SearchBar = ({ rounded, hidden }: SearchBarProps) => {
   return (
     <div className={`bg-purple-light ${rounded ? 'rounded-md md:rounded-full lg:w-1/3' : 'rounded-md '} ${hidden && 'hidden md:flex'} flex h-14 order-last md:order-none col-span-2 focus-within:border-2 focus-within:border-primary`}>
       <input
-        className="rounded-full flex-1 bg-purple-light placeholder-gray-dark pl-4 text-md text-gray-dark focus:outline-none"
+        className={`${rounded && 'rounded-full'} flex-1 bg-purple-light placeholder-gray-dark px-4 text-md text-gray-dark focus:outline-none`}
         type='text'
         placeholder='Search'
         onChange={(e) => setSearchTerm(e.target.value)}
