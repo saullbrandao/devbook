@@ -18,7 +18,7 @@ export const UserCardList = ({ topUsers }: UserCardListProps) => {
         showArrows={false}
         isRTL={false}
         enableAutoPlay={true}
-        autoPlaySpeed={2000}
+        autoPlaySpeed={4000}
         breakPoints={[{
           width: 1,
           itemsToShow: 1
