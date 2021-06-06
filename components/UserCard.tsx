@@ -60,19 +60,21 @@ export const UserCard = ({ user_url }: UserCardProps) => {
           <div className='bg-secondary dark:bg-gray-light h-2 rounded-md ' />
         </div>
       </div>
-      : <div className="w-56 2xl:ml-8 h-80 p-2 rounded-md bg-background-paper dark:text-white">
-        <div className="bg-secondary dark:bg-gray-light rounded-md h-52 w-52">
-          {userInfo?.avatar &&
-            <Image src={userInfo.avatar} width='300' height='300' />
-          }
+      :
+      <Link href={`/users/${userInfo?.login}`}>
+        <div className="w-56 2xl:ml-8 h-80 p-2 rounded-md bg-background-paper dark:text-white hover:bg-primary cursor-pointer">
+          <div className="bg-secondary dark:bg-gray-light rounded-md h-52 w-52">
+            {userInfo?.avatar &&
+              <Image src={userInfo.avatar} width='300' height='300' />
+            }
+          </div>
+          <div className="flex justify-between my-2">
+            <h3 className='text-sm font-medium '>{userInfo?.name}</h3>
+            <h3 className='text-sm font-medium '>@{userInfo?.login}</h3>
+          </div>
+          <p className='text-xs my-2 line-clamp-4'>{userInfo?.bio}</p>
         </div>
-        <div className="flex justify-between my-2">
-          <h3 className='text-sm font-medium '>{userInfo?.name}</h3>
-          <Link href={`/users/${userInfo?.login}`}>
-            <h3 className='text-sm font-medium cursor-pointer hover:text-gray-400 '>@{userInfo?.login}</h3>
-          </Link>
-        </div>
-        <p className='text-xs my-2 line-clamp-4'>{userInfo?.bio}</p>
-      </div>}
+      </Link>
+    }
   </>)
 }
