@@ -3,7 +3,7 @@ App that shows statistics about github users.
 
 - [Link](https://devbook-mu.vercel.app/)
 
-![](/public/devbook.jpg)
+![](/public/devbook.png)
 
 ## Technologies
 - [Next.js](https://github.com/vercel/next.js/)
