@@ -21,12 +21,12 @@ git clone https://github.com/sag1v/react-elastic-carousel.git
 cd react-elastic-carousel
 yarn
 ```
-### To run in development mode
+- To run in development mode
 
 ```console
 yarn dev
 ```
-### To create and run an optimized production build
+- To create and run an optimized production build
 
 ```console
 yarn build
