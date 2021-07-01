@@ -28,11 +28,16 @@ export const SearchBar = ({ rounded, hidden }: SearchBarProps) => {
         onKeyPress={handleSearch}
       />
       <button
-        className={` p-1 flex-grow-0 ${rounded ? 'rounded-md md:rounded-full' : 'rounded-r-md'}  focus:outline-none transition duration-300 ease-in-out hover:bg-primary`}
         onClick={handleSearch}
+        className={` p-1 flex-grow-0 ${rounded ? 'rounded-md md:rounded-full' : 'rounded-r-md'}  focus:outline-none transition duration-300 ease-in-out hover:bg-primary`}
       >
         <div className='px-2 py-2 w-11 flex justify-center'>
-          <Image src='/search-icon.svg' alt='search' width='25' height='25' />
+          <Image
+            src='/search-icon.svg'
+            alt='search'
+            width='25'
+            height='25'
+          />
         </div>
       </button>
 

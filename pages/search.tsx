@@ -3,11 +3,16 @@ import { useRouter } from 'next/router'
 import { UserCard } from "../components/UserCard";
 import { searchApi } from "../services/api";
 
+type User = {
+  id: number
+  url: string
+}
+
 export default function Search() {
   const router = useRouter()
   const term = router.query.query
 
-  const [users, setUsers] = useState([])
+  const [users, setUsers] = useState<User[]>()
   const [isLoading, setIsLoading] = useState(false)
   const [isError, setIsError] = useState(false)
 
@@ -19,7 +24,6 @@ export default function Search() {
 
     return cards
   }
-
 
   useEffect(() => {
     const searchUsers = async (term) => {

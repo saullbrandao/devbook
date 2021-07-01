@@ -3,8 +3,9 @@ import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 import { usersApi } from "../../services/api"
 
-const sortTopRepos = (repos: any[]) => {
-  return repos.sort((a, b) => b.stargazers_count - a.stargazers_count).slice(0, 2)
+const sortTopRepos = (repos) => {
+  const sortedRepos = repos.sort((a, b) => b.stargazers_count - a.stargazers_count).slice(0, 2)
+  return sortedRepos.map(repo => repo.name)
 }
 
 export default function User() {
@@ -12,12 +13,11 @@ export default function User() {
   const { slug } = router.query
 
   const [name, setName] = useState('')
-  const [topRepos, setTopRepos] = useState([])
+  const [topRepos, setTopRepos] = useState<string[]>()
   const [isLoadingData, setIsLoadingData] = useState(false)
   const [isErrorData, setIsErrorData] = useState(false)
   const [isLoadingRepos, setIsLoadingRepos] = useState(false)
   const [isErrorRepos, setIsErrorRepos] = useState(false)
-
 
   useEffect(() => {
     const fetchUserData = async (slug) => {
@@ -92,7 +92,7 @@ export default function User() {
               return (
                 <div key={i} className='self-center'>
                   < Image
-                    src={`https://github-readme-stats.vercel.app/api/pin/?username=${slug}&repo=${repo.name}&bg_color=151515&title_color=ffffff&text_color=9E9E9E`}
+                    src={`https://github-readme-stats.vercel.app/api/pin/?username=${slug}&repo=${repo}&bg_color=151515&title_color=ffffff&text_color=9E9E9E`}
                     width='435'
                     height='130'
                   />

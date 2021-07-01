@@ -25,7 +25,7 @@ export function ThemeToggle() {
 
   return (
     <div className='flex justify-center gap-4 justify-self-end'>
-      <span className=' dark:text-white'>Dark Mode</span>
+      <span className='dark:text-white'>Dark Mode</span>
       <Switch
         checked={darkMode}
         onChange={setDarkMode}
@@ -34,8 +34,7 @@ export function ThemeToggle() {
       >
         <span className="sr-only">Dark Mode</span>
         <span
-          className={`${darkMode ? 'translate-x-6' : 'translate-x-1'
-            } inline-block w-4 h-4 transform bg-white rounded-full`}
+          className={`${darkMode ? 'translate-x-6' : 'translate-x-1'} inline-block w-4 h-4 transform bg-white rounded-full`}
         />
       </Switch>
     </div>

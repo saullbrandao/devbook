@@ -1,6 +1,6 @@
-import { SearchBar } from "./SearchBar"
-import Link from 'next/link'
 import Image from "next/image"
+import Link from 'next/link'
+import { SearchBar } from "./SearchBar"
 import { ThemeToggle } from "./ThemeToggle"
 
 export const Navbar = () => {
