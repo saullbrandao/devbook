@@ -62,7 +62,7 @@ export const UserCard = ({ user_url }: UserCardProps) => {
           </div>
         </div>
         :
-        <Link href={`/users/${userInfo?.login}`}>
+        <Link href={`/users/${userInfo?.login}`} passHref>
           <div className="w-56 2xl:ml-8 h-80 p-2 rounded-md bg-background-paper dark:text-white hover:bg-primary cursor-pointer">
             <div className="bg-secondary dark:bg-gray-light rounded-md h-52 w-52">
               {userInfo?.avatar &&
@@ -70,6 +70,7 @@ export const UserCard = ({ user_url }: UserCardProps) => {
                   src={userInfo.avatar}
                   width='300'
                   height='300'
+                  alt="User's avatar"
                 />
               }
             </div>

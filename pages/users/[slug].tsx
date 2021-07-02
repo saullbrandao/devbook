@@ -72,11 +72,13 @@ export default function User() {
               src={`https://github-readme-stats.vercel.app/api?username=${slug}&show_icons=true&bg_color=151515&title_color=ffffff&text_color=9E9E9E&icon_color=67D47F`}
               width='518'
               height='210'
+              alt="User's github stats"
             />
             <Image
               src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${slug}&layout=compact&bg_color=151515&title_color=ffffff&text_color=9E9E9E`}
               width='435'
               height='210'
+              alt="User's most used languages"
             />
           </div>
         }
@@ -95,6 +97,7 @@ export default function User() {
                     src={`https://github-readme-stats.vercel.app/api/pin/?username=${slug}&repo=${repo}&bg_color=151515&title_color=ffffff&text_color=9E9E9E`}
                     width='435'
                     height='130'
+                    alt="Repository information"
                   />
                 </div>
               )
