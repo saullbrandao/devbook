@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { SearchBar } from "./SearchBar"
+import { SearchBar } from "components/SearchBar"
 
 export const SearchSection = () => {
   return (

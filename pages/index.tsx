@@ -1,7 +1,7 @@
 import { GetStaticProps } from "next";
-import { SearchSection } from "../components/SearchSection";
-import { UserCardList } from "../components/UserCardList";
-import { searchApi } from '../services/api'
+import { SearchSection } from "components/SearchSection";
+import { UserCardList } from "components/UserCardList";
+import { searchApi } from 'services/api'
 
 type TopUser = {
   id: string;

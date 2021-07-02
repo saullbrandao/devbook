@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
-import { usersApi } from "../../services/api"
+import { usersApi } from "services/api"
 
 const sortTopRepos = (repos) => {
   const sortedRepos = repos.sort((a, b) => b.stargazers_count - a.stargazers_count).slice(0, 2)

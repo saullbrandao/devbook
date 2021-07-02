@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from 'next/link'
-import { SearchBar } from "./SearchBar"
-import { ThemeToggle } from "./ThemeToggle"
+import { SearchBar } from "components/SearchBar"
+import { ThemeToggle } from "components/ThemeToggle"
 
 export const Navbar = () => {
   return (

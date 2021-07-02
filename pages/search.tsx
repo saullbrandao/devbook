@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from 'next/router'
-import { UserCard } from "../components/UserCard";
-import { searchApi } from "../services/api";
+import { UserCard } from "components/UserCard";
+import { searchApi } from "services/api";
 
 type User = {
   id: number

@@ -1,4 +1,4 @@
-import { UserCard } from "./UserCard"
+import { UserCard } from "components/UserCard"
 import Carousel from "react-elastic-carousel";
 
 type TopUser = {
