@@ -9,11 +9,11 @@ type SearchBarProps = {
 
 
 export const SearchBar = ({ rounded, hidden }: SearchBarProps) => {
-  const router = useRouter()
   const [searchTerm, setSearchTerm] = useState('')
+  const router = useRouter()
 
   const handleSearch = event => {
-    if (searchTerm && event.type === 'click' || event.key === 'Enter') {
+    if (searchTerm && (event.type === 'click' || event.key === 'Enter')) {
       router.push(`/search?query=${searchTerm}`)
     }
   }
@@ -31,7 +31,7 @@ export const SearchBar = ({ rounded, hidden }: SearchBarProps) => {
         onClick={handleSearch}
         className={` p-1 flex-grow-0 ${rounded ? 'rounded-md md:rounded-full' : 'rounded-r-md'}  focus:outline-none transition duration-300 ease-in-out hover:bg-primary`}
       >
-        <div className='px-2 py-2 w-11 flex justify-center'>
+        <div className='px-2 py-2 w-11 h-full flex justify-center'>
           <Image
             src='/search-icon.svg'
             alt='search'
