@@ -11,7 +11,7 @@ export const Navbar = () => {
           <Image src="/logo.svg" alt="devbook" width='270' height='75' />
         </a>
       </Link>
-      <SearchBar rounded={true} />
+      <SearchBar rounded />
       <ThemeToggle />
     </div>
   )

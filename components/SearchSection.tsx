@@ -8,7 +8,7 @@ export const SearchSection = () => {
         <h1 className='dark:text-white text-4xl sm:text-5xl md:text-6xl'>
           Stalk people on github!
         </h1>
-        <SearchBar hidden={true} />
+        <SearchBar hidden />
       </div>
       <Image
         src="/octocat.png"
