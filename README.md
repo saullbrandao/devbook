@@ -1,124 +1,102 @@
-[![MIT License][license-shield]][license-url]
-[![Issues][issues-shield]][issues-url]
-
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/saullbrandao/devbook">
-    <img src="public/logo.svg" alt="Logo" width="200" height="80">
+  <a href="https://devbook-mu.vercel.app/">
+    <img src="public/logo.svg" alt="Logo" width="335" height="80">
   </a>
 
-  <h2 align="center" style="font-weight: 700">devBook</h2>
+  <p align="center">
+    <a href="https://www.twitter.com/saullbrandao/">
+      <img alt="Saull Brandão" src="https://img.shields.io/badge/-saullbrandao-1DA1F2?style=flat&logo=Twitter&logoColor=white" />
+    </a>
+    <a href="https://www.linkedin.com/in/saullbrandao/">
+      <img alt="Saull Brandão" src="https://img.shields.io/badge/-saullbrandao-0A66C2?style=flat&logo=Linkedin&logoColor=white" />
+    </a>
+    <a href="./LICENSE">
+      <img alt="License MIT" src="https://img.shields.io/github/license/saullbrandao/devbook" />
+    </a>
+    <a href="https://github.com/saullbrandao/devbook/issues">
+    <img alt="Issues" src="https://img.shields.io/github/issues/saullbrandao/devbook" />
+    </a>
+  </p>
+  <h2 align="center">devbook</h2>
 
   <p align="center">
-  <!-- change title -->
-    Get information about countries
+    App that shows statistics about github users
     <br />
-    <br />
-    <a href="https://devbook-saullbrandao.vercel.app/">View Demo</a>
-    ·
-    <a href="https://github.com/saullbrandao/devbook/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/saullbrandao/devbook/issues">Request Feature</a>
   </p>
 </p>
 
-<!-- TABLE OF CONTENTS -->
-<details open="open">
-  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ol>
-</details>
+# :bookmark_tabs: Table of Contents
 
-<!-- ABOUT THE PROJECT -->
-## About The Project
+- [About the project](#about-the-project)
+- [Technologies](#technologies)
+- [Getting started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Issues](#issues)
+- [Contributing](#contributing)
+- [License](#license)
+
+# :page_with_curl: About the Project
 
 ![devbook](https://raw.githubusercontent.com/saullbrandao/devbook/main/public/demo.png)
 
-<!-- change here -->
-* Display the top 10 github users on the homepage
-* You can search github users
-* There is a light and dark mode
-* Clicking on a card will open a new page which display the user's stats
+- Display the top 10 github users on the homepage
+- You can search github users
+- There is a light and dark mode
+- Clicking on a card will open a new page which display the user's stats
 
-### Built With
+# :computer: Technologies
 
-* [React](https://github.com/facebook/react)
-* [Next.js](https://github.com/vercel/next.js/)
-* [Tailwind CSS](https://github.com/tailwindlabs/tailwindcss/)
-* [Typescript](https://github.com/microsoft/TypeScript)
-* [React Elastic Carousel](https://github.com/sag1v/react-elastic-carousel)
-* [axios](https://github.com/axios/axios)
-* [Github Search API](https://docs.github.com/en/rest/reference/search) 
-* [Github Readme Stats](https://github.com/anuraghazra/github-readme-stats) 
+- [React](https://github.com/facebook/react)
+- [Next.js](https://github.com/vercel/next.js/)
+- [Tailwind CSS](https://github.com/tailwindlabs/tailwindcss/)
+- [Typescript](https://github.com/microsoft/TypeScript)
+- [React Elastic Carousel](https://github.com/sag1v/react-elastic-carousel)
+- [axios](https://github.com/axios/axios)
+- [Github Search API](https://docs.github.com/en/rest/reference/search)
+- [Github Readme Stats](https://github.com/anuraghazra/github-readme-stats)
 
+# :rocket: Getting Started
 
-<!-- GETTING STARTED -->
-## Getting Started
-
-To get a local copy up and running follow these simple steps.
-
-### Prerequisites
+## Prerequisites
 
 You will need to install Node.js and yarn
-* [Node.js](https://nodejs.org/en/download/)
-* yarn
-  ```sh
-  npm install -g yarn
-  ```
 
-### Installation
+- [Node.js](https://nodejs.org/en/download/)
+- [Yarn](https://classic.yarnpkg.com/en/docs/install)
 
-1. Clone the repo
-   ```sh
-   git clone https://github.com/saullbrandao/devbook.git
-   ```
-2. Install packages
-   ```sh
-   yarn
-   ```
+## Installation
 
+```sh
+# Clone Repository
+$ git clone https://github.com/saullbrandao/devbook.git && cd devbook
 
+# Install Dependencies
+$ yarn
 
-<!-- USAGE EXAMPLES -->
-## Usage
+# Run Application
+$ yarn dev
+```
 
-1. Run the project
-    ```sh
-    yarn dev
-    ```
-2. This starts the development server on http://localhost:3000
+This starts the development server on http://localhost:3000/
 
-<!-- LICENSE -->
-## License
+# :interrobang: Issues
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Create a <a href="https://github.com/saullbrandao/devbook/issues">new issue
+report</a>, it will be an honor to be able to help you solve and further improve
+our application.
 
-<!-- CONTACT -->
-## Contact
+# :mailbox: Contributing
 
-Saull Brandão - [@saullbrandao](https://twitter.com/saullbrandao) - saull@outlook.com
+- Fork this repository;
+- Create a new branch to develop your feature: `git checkout -b my-feature`;
+- Commit your changes: `git commit -m 'feat: my new feature'`;
+- Push to your branch: `git push origin my-feature`.
+- Open a Pull Request
 
-Project Link: [https://github.com/saullbrandao/devbook](https://github.com/saullbrandao/devbook)
+# :lock: License
 
-
-[issues-shield]: https://img.shields.io/github/issues/saullbrandao/devbook.svg?style=for-the-badge
-[issues-url]: https://github.com/saullbrandao/devbook/issues
-[license-shield]: https://img.shields.io/github/license/saullbrandao/devbook.svg?style=for-the-badge
-[license-url]: https://github.com/saullbrandao/devbook/blob/main/LICENSE
+Distributed under the MIT License. See [LICENSE](./LICENSE) for more
+information. Made by [Saull Brandão](https://www.linkedin.com/in/saullbrandao/).
