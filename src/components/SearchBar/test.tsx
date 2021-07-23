@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { SearchBar } from 'components/SearchBar'
+import { SearchBar } from '.'
 
 const useRouter = jest.spyOn(require('next/router'), 'useRouter')
 
@@ -43,7 +43,6 @@ describe('Search bar', () => {
 
     expect(input).toHaveClass('rounded-full')
     expect(button).toHaveClass('rounded-md md:rounded-full')
-
   })
   it('should have hidden class if hidden prop is passed', () => {
     const { container } = render(<SearchBar hidden />)
