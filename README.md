@@ -40,7 +40,8 @@
 
 # :page_with_curl: About the Project
 
-![devbook](https://raw.githubusercontent.com/saullbrandao/devbook/main/public/demo.png)
+![devbook](https://raw.githubusercontent.com/saullbrandao/devbook/main/demo-light.png)
+![devbook](https://raw.githubusercontent.com/saullbrandao/devbook/main/demo-dark.png)
 
 - Display the top 10 github users on the homepage
 - You can search github users
