@@ -45,7 +45,7 @@
 
 - Display the top 10 github users on the homepage
 - You can search github users
-- There is a light and dark mode
+- Light and dark mode
 - Clicking on a card will open a new page which display the user's stats
 
 # :computer: Technologies
