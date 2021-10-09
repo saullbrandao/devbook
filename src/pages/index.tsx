@@ -1,11 +1,10 @@
-import { GetStaticProps } from "next";
-import { SearchSection } from "components/SearchSection";
-import { UserCardList } from "components/UserCardList";
+import { GetStaticProps } from 'next'
 import { searchApi } from 'services/api'
+import HomeTemplate from 'templates/HomeTemplate'
 
 type TopUser = {
-  id: string;
-  url: string;
+  id: string
+  url: string
 }
 
 type HomeProps = {
@@ -13,12 +12,7 @@ type HomeProps = {
 }
 
 export default function Home({ topUsers }: HomeProps) {
-  return (
-    <div className='flex flex-col gap-4 justify-center-center container mx-auto'>
-      <SearchSection />
-      <UserCardList topUsers={topUsers} />
-    </div>
-  )
+  return <HomeTemplate topUsers={topUsers} />
 }
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -27,14 +21,14 @@ export const getStaticProps: GetStaticProps = async () => {
   const topUsers = data.items.map(user => {
     return {
       id: user.id,
-      url: user.url
+      url: user.url,
     }
   })
 
   return {
     props: {
-      topUsers
+      topUsers,
     },
-    revalidate: 60 * 60 * 2
+    revalidate: 60 * 60 * 24,
   }
 }
