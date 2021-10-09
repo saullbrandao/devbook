@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
+import Head from 'next/head'
 import { usersApi } from 'services/api'
 
 const sortTopRepos = repos => {
@@ -60,6 +61,12 @@ export default function UserTemplate() {
   }, [slug])
 
   return (
+    <>
+    <Head>
+      <title>{slug} - Devbook</title>
+    <meta name='description'  content='Shows statistics about github users'/>
+
+    </Head>
     <section className="dark:text-white flex flex-col container items-center md:items-stretch  mx-auto gap-4 my-8">
       <h1 className="font-bold text-4xl">{name}</h1>
       <section>
@@ -111,5 +118,6 @@ export default function UserTemplate() {
         )}
       </section>
     </section>
+    </>
   )
 }
