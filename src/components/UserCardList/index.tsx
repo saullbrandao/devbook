@@ -12,8 +12,10 @@ type UserCardListProps = {
 
 export const UserCardList = ({ topUsers }: UserCardListProps) => {
   return (
-    <div className="bg-secondary dark:bg-background-paper-dark flex flex-col justify-between dark:text-white rounded-md mb-8 py-4">
-      <h2 className="text-4xl font-semibold mb-8 self-center">Top users</h2>
+    <section className="bg-secondary dark:bg-background-paper-dark flex flex-col justify-between dark:text-white rounded-md mb-8 py-4">
+      <header>
+        <h2 className="text-4xl font-semibold mb-8 self-center">Top users</h2>
+      </header>
       <Carousel
         showArrows={false}
         isRTL={false}
@@ -46,6 +48,6 @@ export const UserCardList = ({ topUsers }: UserCardListProps) => {
           <UserCard key={user.id} user_url={user.url} />
         ))}
       </Carousel>
-    </div>
+    </section>
   )
 }

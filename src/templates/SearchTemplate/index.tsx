@@ -53,10 +53,12 @@ export default function SearchTemplate() {
       <Head>
         <title>Search - Devbook</title>
       </Head>
-      <div className="container mx-auto flex flex-col items-center lg:items-stretch my-8 md:my-16 gap-8">
-        <h1 className="dark:text-white font-bold text-4xl">
-          Results for {term}
-        </h1>
+      <section className="container mx-auto flex flex-col items-center lg:items-stretch my-8 md:my-16 gap-8">
+        <header>
+          <h1 className="dark:text-white font-bold text-4xl">
+            Results for {term}
+          </h1>
+        </header>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center gap-4 p-8 self-stretch rounded-md bg-secondary dark:bg-background-paper">
           {isError && (
             <h1 className="dark:text-red-600 text-xl col-span-full">
@@ -69,7 +71,7 @@ export default function SearchTemplate() {
                 <UserCard key={user.id} user_url={user.url} />
               ))}
         </div>
-      </div>
+      </section>
     </>
   )
 }
