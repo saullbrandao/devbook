@@ -25,6 +25,8 @@
     App that shows statistics about github users
     <br />
   </p>
+  <p align="center">Challenge by <a href="https://www.devchallenge.com.br/challenges/5f261d39ecb9243236c05387/details">DevChallenges</a></p>
+  
 </p>
 
 # :bookmark_tabs: Table of Contents
