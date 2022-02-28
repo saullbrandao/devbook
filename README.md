@@ -1,6 +1,6 @@
 <!-- PROJECT LOGO -->
 <br />
-<p align="center">
+<div align="center">
   <a href="https://devbook-mu.vercel.app/">
     <img src="public/logo.svg" alt="Logo" width="335" height="80">
   </a>
@@ -27,7 +27,7 @@
   </p>
   <p align="center">Challenge by <a href="https://www.devchallenge.com.br/challenges/5f261d39ecb9243236c05387/details">DevChallenges</a></p>
   
-</p>
+</div>
 
 # :bookmark_tabs: Table of Contents
 
